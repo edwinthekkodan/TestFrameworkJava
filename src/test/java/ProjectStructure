@@ -1,0 +1,9 @@
+src/test/java/
+├── webdriver/
+│   └── BaseTest.java
+├── pageobjects/
+│   ├── GoogleHomePage.java
+│   └── DemoQATextBoxPage.java
+└── uitests/
+    ├── GoogleHomeTest.java
+    └── JavaKeywordDemoTest.java
