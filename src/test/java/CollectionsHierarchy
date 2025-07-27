@@ -1,0 +1,32 @@
+java.lang.Iterable
+      └── java.util.Collection
+              ├── List
+              │     ├── ArrayList
+              │     ├── LinkedList
+              │     └── Vector
+              │           └── Stack
+              │
+              ├── Set
+              │     ├── HashSet
+              │     │     └── LinkedHashSet
+              │     └── SortedSet (Interface)
+              │            └── NavigableSet (Interface)
+              │                   └── TreeSet
+              │
+              ├── Queue
+              │     ├── PriorityQueue
+              │     ├── ArrayDeque
+              │     └── LinkedList (also implements List)
+              │
+              └── Deque (extends Queue)
+                    ├── ArrayDeque
+                    └── LinkedList
+
+java.util.Map (not a subtype of Collection)
+      ├── HashMap
+      │     └── LinkedHashMap
+      ├── Hashtable
+      │     └── Properties
+      └── SortedMap (Interface)
+            └── NavigableMap (Interface)
+                  └── TreeMap
