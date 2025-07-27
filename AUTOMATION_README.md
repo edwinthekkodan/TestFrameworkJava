@@ -29,32 +29,32 @@ src/test/java/
 ### UI Tests (Selenium WebDriver):
 ```bash
 # Run all UI tests
-mvn test -Dtest=*Test
+mvn clean test -Dtest=*Test
 
 # Run specific UI test
-mvn test -Dtest=GoogleHomeTest
+mvn clean test -Dtest=GoogleHomeTest
 
 # Run with specific browser
-mvn test -Dbrowser=chrome
-mvn test -Dbrowser=firefox
-mvn test -Dbrowser=edge
+mvn clean test -Dbrowser=chrome
+mvn clean test -Dbrowser=firefox
+mvn clean test -Dbrowser=edge
 
 # Run using TestNG XML
-mvn test -DsuiteXmlFile=testng.xml
+mvn clean test -DsuiteXmlFile=testng.xml
 ```
 
 ### API Tests (Karate):
 ```bash
 # Run API tests
-mvn test -Dtest=API_Automation.features.ApiTestRunner
+mvn clean test -Dtest=API_Automation.features.ApiTestRunner
 
 # Run with specific environment
-mvn test -Dtest=API_Automation.features.ApiTestRunner -Dkarate.env=test
+mvn clean test -Dtest=API_Automation.features.ApiTestRunner -Dkarate.env=test
 ```
 
 ### Run All Tests:
 ```bash
-mvn test
+mvn clean test
 ```
 
 ## UI Automation (Selenium WebDriver)
