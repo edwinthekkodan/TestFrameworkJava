@@ -1,8 +1,8 @@
-package uitests;
+package UI_Automation.uitests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import webdriver.BaseTest;
+import UI_Automation.webdriver.BaseTest;
 
 public class GoogleHomeTest extends BaseTest {
 

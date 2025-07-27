@@ -1,8 +1,8 @@
-package uitests;
+package UI_Automation.uitests;
 
 import org.openqa.selenium.By;
 import org.testng.annotations.*;
-import webdriver.BaseTest;
+import UI_Automation.webdriver.BaseTest;
 
 public class JavaKeywordDemoTest extends BaseTest {
 

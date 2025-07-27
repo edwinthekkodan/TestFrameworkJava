@@ -6,21 +6,21 @@ This project includes both UI automation using Selenium WebDriver and API automa
 
 ```
 src/test/java/
-├── karate/                       # API Automation (Karate)
-│   ├── karate-config.js          # Global configuration
-│   ├── KarateRunner.java         # Main test runner
-│   └── api/
-│       ├── ApiTestRunner.java    # API-specific test runner
+├── API_Automation/               # API Automation (Karate)
+│   └── features/
+│       ├── ApiTestRunner.java    # API test runner
 │       └── sample-api.feature    # Sample API tests
-├── webdriver/                    # UI Automation (Selenium)
-│   └── BaseTest.java             # WebDriver base configuration
-├── pageobjects/                  # Page Object Model classes
-│   ├── DemoQATextBoxPage.java    # DemoQA page objects
-│   └── GoogleHomePage.java       # Google page objects
-├── uitests/                      # UI test classes
-│   ├── GoogleHomeTest.java       # Google UI tests
-│   └── JavaKeywordDemoTest.java  # Demo UI tests
+├── UI_Automation/                # UI Automation (Selenium)
+│   ├── webdriver/
+│   │   └── BaseTest.java         # WebDriver base configuration
+│   ├── pageobjects/              # Page Object Model classes
+│   │   ├── DemoQATextBoxPage.java # DemoQA page objects
+│   │   └── GoogleHomePage.java   # Google page objects
+│   └── uitests/                  # UI test classes
+│       ├── GoogleHomeTest.java   # Google UI tests
+│       └── JavaKeywordDemoTest.java # Demo UI tests
 └── resources/
+    ├── karate-config.js          # Karate configuration
     └── simplelogger.properties   # Logging configuration
 ```
 
@@ -45,14 +45,11 @@ mvn test -DsuiteXmlFile=testng.xml
 
 ### API Tests (Karate):
 ```bash
-# Run all Karate tests
-mvn test -Dtest=KarateRunner
-
-# Run only API tests
-mvn test -Dtest=ApiTestRunner
+# Run API tests
+mvn test -Dtest=API_Automation.features.ApiTestRunner
 
 # Run with specific environment
-mvn test -Dtest=ApiTestRunner -Dkarate.env=test
+mvn test -Dtest=API_Automation.features.ApiTestRunner -Dkarate.env=test
 ```
 
 ### Run All Tests:
@@ -70,8 +67,8 @@ mvn test
 
 ### Writing UI Tests:
 1. Extend `BaseTest` class for WebDriver setup
-2. Create page objects in `pageobjects/` package
-3. Write test classes in `uitests/` package
+2. Create page objects in `UI_Automation.pageobjects` package
+3. Write test classes in `UI_Automation.uitests` package
 4. Use TestNG annotations (`@Test`, `@BeforeMethod`, `@AfterMethod`)
 
 ### Sample UI Test:
@@ -94,7 +91,7 @@ public class SampleTest extends BaseTest {
 - **JSON/XML Support**: Native data handling
 
 ### Writing API Tests:
-1. Create `.feature` files in `src/test/java/karate/api/`
+1. Create `.feature` files in `src/test/java/API_Automation/features/`
 2. Use Gherkin syntax with Karate keywords
 3. Common Karate keywords:
    - `url` - set base URL
@@ -105,7 +102,7 @@ public class SampleTest extends BaseTest {
    - `match` - assertions
 
 ### Environment Configuration:
-Edit `karate-config.js` for environment settings:
+Edit `src/test/resources/karate-config.js` for environment settings:
 - `dev` - Development environment (default)
 - `test` - Test environment
 - `prod` - Production environment
@@ -137,5 +134,5 @@ Supported browsers can be configured via:
 - **Selenium WebDriver 4.11.0**: UI automation
 - **TestNG 7.4.0**: Test framework
 - **WebDriverManager 5.6.2**: Driver management
-- **Karate 1.4.1**: API automation
+- **Karate 1.2.0**: API automation
 - **SLF4J**: Logging
