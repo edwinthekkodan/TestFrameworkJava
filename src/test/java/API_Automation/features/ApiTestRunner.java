@@ -8,7 +8,7 @@ public class ApiTestRunner {
     
     @Test
     public void testApi() {
-        Results results = Runner.path("classpath:API_Automation/api").parallel(1);
+        Results results = Runner.path("src/test/java/API_Automation/features").parallel(1);
         System.out.println("Features run: " + results.getFeaturesTotal());
         System.out.println("Scenarios run: " + results.getScenariosTotal());
         System.out.println("Failed: " + results.getFailCount());
